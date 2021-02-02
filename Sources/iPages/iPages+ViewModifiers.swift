@@ -15,15 +15,9 @@ import AppKit
 public extension iPages {
     
     func disableSwipe(_ disabled: Bool) -> iPages {
-        var views: [UIScrollView] = []
-        for view in self.subviews {
-            if let subView = view as? UIScrollView {
-                subView.isScrollEnabled = false
-                views.append(subView)
-            }
-        }
-        self.subviews = views
-        return self
+        var view = self
+        
+        return view
     }
     
     /// Modifies whether or not the page view should include the standard page control **dots**. (••••)

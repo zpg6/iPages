@@ -61,8 +61,8 @@ struct PageViewController: ControllerRepresentable {
         pageViewController.view.backgroundColor = .clear
         
         for view in pageViewController.view.subviews {
-            if let scrollView = view as? UIScrollView {
-                scrollView.delegate = context.coordinator
+            if let _ = view as? UIScrollView {
+                //scrollView.delegate = context.coordinator
                 break
             }
         }
