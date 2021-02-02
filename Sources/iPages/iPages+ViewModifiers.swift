@@ -14,6 +14,18 @@ import AppKit
 
 public extension iPages {
     
+    func disableSwipe(_ disabled: Bool) -> iPages {
+        var views: [UIScrollView] = []
+        for view in self.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+                views.append(subView)
+            }
+        }
+        self.subviews = views
+        return self
+    }
+    
     /// Modifies whether or not the page view should include the standard page control **dots**. (••••)
     /// - Parameter hideDots: Whether the page view should hide the page dots at the bottom 👇
     /// - Returns: A page view with the the desired presence or absence of dots
